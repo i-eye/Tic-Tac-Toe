@@ -35,16 +35,21 @@ public class Main {
                 System.out.println(turn+" wins!!");
                 break;
             }
-            // swaps player after every turn
+
+            // checks to see if the board is full: if it is and the win check doesn't come back true, it ends the game with a tie.
+            if(turnNumber>=9){
+                printArray(gameBoard);
+                System.out.println("It is a tie............how typical");
+                break;
+            }
+            // swaps player after every turn and adds to the turn count
             if (turn == 'X') {
                 turn = 'O';
             } else {
                 turn = 'X';
             }
-            if(turnNumber>=9){
-                System.out.println("It is a tie............how typical");
-            }
             turnNumber++;
+
         }
 
 
