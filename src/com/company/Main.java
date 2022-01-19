@@ -25,7 +25,9 @@ public class Main {
                 target[0] = sc.nextInt();
                 System.out.print("Player "+  turn + ", Enter a column(0,1,2): ");
                 target[1] = sc.nextInt();
-                if (gameBoard[target[0]][target[1]] == '\u0020'){
+                if(0 > target[0] || target[0] > 2 || 0 > target[1] || 2 < target[1]){
+                    System.out.println("Invalid Index");
+                } else if(gameBoard[target[0]][target[1]] == '\u0020') {
                     break;
                 } else {
                     System.out.println("Please repeat, that spot is already taken");
