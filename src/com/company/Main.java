@@ -2,7 +2,6 @@ package com.company;
 import java.util.Scanner;
 
 public class Main {
-
     public static void main(String[] args) {
         // initialization variables
         Scanner sc = new Scanner(System.in);
@@ -10,8 +9,6 @@ public class Main {
         char[][] gameBoard = {{'\u0020','\u0020','\u0020'},{'\u0020','\u0020','\u0020'},{'\u0020','\u0020','\u0020'}};
         int[] target = new int[2];
         int turnNumber=1;
-
-
 
         System.out.println("Hey, if you don't win this match of Tic-Tac-Toe i'm gonna write Nathan's library on all the pieces of paper in your home");
         // a while true loop that takes input from the two players
@@ -35,7 +32,6 @@ public class Main {
                 System.out.println(turn+" wins!!");
                 break;
             }
-
             // checks to see if the board is full: if it is and the win check doesn't come back true, it ends the game with a tie.
             if(turnNumber>=9){
                 printArray(gameBoard);
@@ -49,10 +45,7 @@ public class Main {
                 turn = 'X';
             }
             turnNumber++;
-
         }
-
-
     }
     // A method that prints the board of the game
     public static void printArray(char[][] gameBoard){
