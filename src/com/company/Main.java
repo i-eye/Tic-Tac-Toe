@@ -9,11 +9,12 @@ public class Main {
         char turn = 'X';
         char[][] gameBoard = {{'\u0020','\u0020','\u0020'},{'\u0020','\u0020','\u0020'},{'\u0020','\u0020','\u0020'}};
         int[] target = new int[2];
+        int turnNumber=1;
 
 
 
         System.out.println("Hey, if you don't win this match of Tic-Tac-Toe i'm gonna write Nathan's library on all the pieces of paper in your home");
-        // a while true loops that takes input from the two players
+        // a while true loop that takes input from the two players
         // it checks for a win every loop and breaks when it finishes.
         while(true) {
             printArray(gameBoard);
@@ -34,12 +35,21 @@ public class Main {
                 System.out.println(turn+" wins!!");
                 break;
             }
-            // swaps player after every turn
+
+            // checks to see if the board is full: if it is and the win check doesn't come back true, it ends the game with a tie.
+            if(turnNumber>=9){
+                printArray(gameBoard);
+                System.out.println("It is a tie............how typical");
+                break;
+            }
+            // swaps player after every turn and adds to the turn count
             if (turn == 'X') {
                 turn = 'O';
             } else {
                 turn = 'X';
             }
+            turnNumber++;
+
         }
 
 
